@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,7 +41,7 @@
 <body>
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-
+   <script src="https://cdn.jsdelivr.net/npm/htmlson.js@1.0.4/src/htmlson.js"></script>
     <title>Covid-19 Tracker India</title>
   </head>
   <body>
@@ -75,11 +77,32 @@
       </div>
     </div>
    
+  
 
-      
+    
     <canvas id="myChart2" width="250" height="100"></canvas>
     
     <canvas id="myChart"></canvas>
+
+
+    <div class="container-fluid">
+      <div class="table-responsive">
+          <table class="table">
+              <thead class="thead-dark">
+                  <tr>
+                      <th scope="col">States</th>
+                      <th scope="col">Confirmed</th>
+                      <th scope="col">Active</th>
+                      <th scope="col">Recovered</th>
+                      <th scope="col">Deceased</th>
+                  </tr>
+              </thead>
+            <tbody>
+          </tbody>
+          </table>
+       </table>
+      </div>
+</div>
     <footer class="footer mt-auto py-3 bg-Dark">
     
       <div class="container text-center">
