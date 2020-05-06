@@ -11,7 +11,7 @@ $(document).ready(function () {
     var total_confirmed;
     var total_recovered;
     var total_deaths;
-
+   
     // Take the first element in statewise array and add the objects values into the above variables
     total_active = data.statewise[0].active;
     total_confirmed = data.statewise[0].confirmed;
@@ -52,7 +52,7 @@ $(document).ready(function () {
           {
             
             data: [total_active,total_confirmed,total_deaths,total_recovered],
-            backgroundColor:["#2A81EA", "#ffd800","#F24338","#14e81f"],
+            backgroundColor:["#2A81EA", "#ff9000","#F24338","#14e81f"],
           },
         ],
         labels: [
@@ -65,6 +65,7 @@ $(document).ready(function () {
       },
       option: {},
     });
+    
     var myChart = document.getElementById("myChart").getContext("2d");
     var chart = new Chart(myChart, {
       type: "line",
@@ -74,7 +75,7 @@ $(document).ready(function () {
           {
             label: "Confirmed Cases",
             data: confirmed,
-            backgroundColor: "#ffd800",
+            backgroundColor: "#ff9000",
             minBarLength: 100,
           },
           {
@@ -100,5 +101,7 @@ $(document).ready(function () {
       },
       option: {},
     });
+     
   });
+  
 });
