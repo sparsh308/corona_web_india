@@ -18,17 +18,15 @@
   
 
 
-    <!-- My Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+
+  
 
     <!-- My jQuery -->
     <script src="main.js"></script>
+
   <style>
       body {
-       @font-face {
-         font-family: "exo.black-italic" ,black-italic;
-         src: url(".exo.black-italic.otf");
-       }
+       
        font-weight:bolder;
         font-size: 20px;
         text-shadow: 2px 1px 2px #aaa
@@ -45,46 +43,45 @@
     <title>Covid-19 Tracker India</title>
   </head>
   <body>
-    <div class="container-fluid bg-light p-5 text-center my-3">
+    <div class="container-fluid bg-light p-2 text-center my-1">
       <img src="man.png" alt="logo image" style="width:100px;height:100px;">
-      <h1 class="">Covid-19 Tracker India</h1>
+      <h1 style="font-weight: bolder;">Covid-19 Tracker India</h1>
     
     </div>
-    <div class="container my-5">
+    <div class="container bg-light p-1 my-1 text-center">
+      
+      <h5 class="text-info1" style="color:limegreen",font-weight:bolder >#GoCoronaGo</h5>
+      <img src="stayhome.png" alt="logo image" style="width:80px;height:80px;">
+      <p class="text-muted" style="font-weight: bolder;">Stay Home Stay Safe.</p>
+    </div>
+    <div class="container my-5 p-2">
       <div class="row text-center">
         <div class="col-3 text-warning">
-          <h5>Confirmed</h5>
+          <h5 style="font-weight: bolder;">Confirmed</h5>
           <p id="confirmed"></p>
         </div>
         <div class="col-3 text-info">
-          <h5>Active</h5>
+          <h5 style="font-weight: bolder;">Active</h5>
           <p id="active"></p>
         </div>
         <div class="col-3 text-success">
-          <h5>Recovered</h5>
+          <h5 style="font-weight: bolder;">Recovered</h5>
           <p id="recovered"></p>
         </div>
         <div class="col-3 text-danger">
-          <h5>Deceased</h5>
+          <h5 style="font-weight: bolder;">Deceased</h5>
           <p id="deaths"></p>
         </div>
       </div>
     </div>
-    <div class="container bg-light p-3 my-5 text-center">
-      
-      <h5 class="text-info1" style="color:limegreen">#GoCoronaGo</h5>
-      <p class="text-muted">Stay Home Stay Safe.</p>
-    </div>
+   
 
       
     <canvas id="myChart2" width="250" height="100"></canvas>
     
     <canvas id="myChart"></canvas>
-
-    
-
-
     <footer class="footer mt-auto py-3 bg-Dark">
+    
       <div class="container text-center">
           <span class="text-muted">Developed by, <a href="https://github.com/sparsh308" target="_blank">Sparsh Kishore Kumar</a></span>
       </div>
