@@ -11,13 +11,14 @@ $(document).ready(function () {
     var total_confirmed;
     var total_recovered;
     var total_deaths;
+
    
     // Take the first element in statewise array and add the objects values into the above variables
     total_active = data.statewise[0].active;
     total_confirmed = data.statewise[0].confirmed;
     total_recovered = data.statewise[0].recovered;
     total_deaths = data.statewise[0].deaths;
-
+    
     // The each loop select a single statewise array element
     // Take the data in that array and add it to variables
     $.each(data.statewise, function (id, obj) {
@@ -42,7 +43,7 @@ $(document).ready(function () {
     $("#deaths").append(total_deaths);
 
     // Chart initialization
-   
+  
 
     var myChart2 = document.getElementById("myChart2").getContext("2d");
     var mypie = new Chart(myChart2, {
@@ -64,8 +65,22 @@ $(document).ready(function () {
       
       },
       option: {},
-    });
-    
+      });
+     
+      
+      var tbody = $('.table'),
+          props = ["state","confirmed", "active","recovered", "deaths"];
+      $.each(data.statewise, function(i, reservation) {
+        var tr = $('<tr>');
+        $.each(props, function(i, prop) {
+          $('<td>').html(reservation[prop]).appendTo(tr);  
+        });
+        tbody.append(tr);
+      });
+      
+      
+
+
     var myChart = document.getElementById("myChart").getContext("2d");
     var chart = new Chart(myChart, {
       type: "line",
@@ -103,5 +118,6 @@ $(document).ready(function () {
     });
      
   });
+  
   
 });
