@@ -11,13 +11,27 @@ $(document).ready(function () {
     var total_confirmed;
     var total_recovered;
     var total_deaths;
+    
 
+    var date=[];
+    var totalconfirmed=[];
+    var totaldeceased=[];
+    var totalrecovered=[];
    
     // Take the first element in statewise array and add the objects values into the above variables
     total_active = data.statewise[0].active;
     total_confirmed = data.statewise[0].confirmed;
     total_recovered = data.statewise[0].recovered;
     total_deaths = data.statewise[0].deaths;
+    var tbody = $('.table'),
+          props = ["state","confirmed", "active","recovered", "deaths"];
+      $.each(data.statewise, function(i, objk) {
+        var tr = $('<tr>');
+        $.each(props, function(i, prop) {
+          $('<td>').html(objk[prop]).appendTo(tr);  
+        });
+        tbody.append(tr);
+      });
     
     // The each loop select a single statewise array element
     // Take the data in that array and add it to variables
@@ -29,6 +43,14 @@ $(document).ready(function () {
       active.push(obj.active);
     });
 
+
+    $.each(data.cases_time_series, function (id, obj) {
+      date.push(obj.date);
+      totalconfirmed.push(obj.totalconfirmed);
+      totaldeceased.push(obj.totaldeceased);
+      totalrecovered.push(obj.totalrecovered);
+    });
+    console.log(date);
     // Remove the first element in the states, confirmed, recovered, and deaths as that is the total value
     states.shift();
     confirmed.shift();
@@ -68,47 +90,33 @@ $(document).ready(function () {
       });
      
       
-      var tbody = $('.table'),
-          props = ["state","confirmed", "active","recovered", "deaths"];
-      $.each(data.statewise, function(i, reservation) {
-        var tr = $('<tr>');
-        $.each(props, function(i, prop) {
-          $('<td>').html(reservation[prop]).appendTo(tr);  
-        });
-        tbody.append(tr);
-      });
+      
       
       
 
 
-    var myChart = document.getElementById("myChart").getContext("2d") ;
+    var myChart = document.getElementById("myChart").getContext("2d");
     var chart = new Chart(myChart, {
       type: "line",
       data: {
-        labels: states,
+        labels: date,
         datasets: [
           {
-            label: "Confirmed Cases",
-            data: confirmed,
+            label: "Total Confirmed Cases",
+            data: totalconfirmed,
             backgroundColor: "#ff9000",
             minBarLength: 100,
           },
           {
-            label: "Recovered",
-            data: recovered,
+            label: "Total Deceased Cases",
+            data: totaldeceased,
+            backgroundColor: "#F24338",
+            minBarLength: 100,
+          },
+          {
+            label: "Total Recovered Cases",
+            data: totalrecovered,
             backgroundColor: "#14e81f",
-            minBarLength: 100,
-          },
-          {
-            label: "Active",
-            data: active,
-            backgroundColor: "#2A81EA",
-            minBarLength: 100,
-          },
-          {
-            label: "Deceased",
-            data: deaths,
-            backgroundColor: "#ff0000",
             minBarLength: 100,
           },
          
@@ -116,6 +124,42 @@ $(document).ready(function () {
       },
       option: {},
     });
+
+    var myChart3 = document.getElementById("myChart3").getContext("2d");
+    var line = new Chart(myChart3, {
+      type: "line",
+      data: {
+        labels: states,
+        datasets: [
+          {
+            label: "Total Confirmed Cases",
+            data: confirmed,
+            backgroundColor: "#ff9000",
+            minBarLength: 100,
+          },
+          {
+            label: "Total Deceased Cases",
+            data: deaths,
+            backgroundColor: "#F24338",
+            minBarLength: 100,
+          },
+          {
+            label: " Recovered Cases",
+            data: recovered,
+            backgroundColor: "#14e81f",
+            minBarLength: 100,
+          },
+          {
+            label: "Active Cases",
+            data: active,
+            backgroundColor: "#2A81EA",
+            minBarLength: 100,
+          },
+         
+        ],
+      },
+      option: {},
+    })
      
   });
   
