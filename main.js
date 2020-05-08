@@ -165,7 +165,7 @@ $(document).ready(function () {
 
 
     function calcPc(n1, n2) {
-      return (((n2 - n1) / n1 * 100).toLocaleString('fullwide', { maximumFractionDigits: 3 }) + "%");
+      return (((n2 - n1) / n1 * 100).toLocaleString('fullwide', { maximumFractionDigits: 2 }) + "%");
     }
 
     var result = calcPc(inital, total_confirmed);
