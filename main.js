@@ -167,15 +167,27 @@ $(document).ready(function () {
     function calcPc(n1, n2) {
       return (((n2 - n1) / n1 * 100).toLocaleString('fullwide', { maximumFractionDigits: 2 }) + "%");
     }
+    function calcPc1(n1, n2) {
+      return (((n2 - n1) / n1 * 100));
+    }
+
+    function P(n1, n2) {
+      return ((((n1 * n2)) / 100) + parseInt(total_confirmed)).toLocaleString('fullwide', { maximumFractionDigits: 0 });
+    }
+
 
     var result = calcPc(inital, total_confirmed);
+    var result1 = calcPc1(inital, total_confirmed);
     console.log(
 
       " Growth Rate: in last 7 days", result ,
-
-
     )
-    $("#Growth").append(result)
+
+    var predict = P(result1, total_confirmed)
+
+    console.log(predict);
+    $("#predict").append(predict);
+    $("#Growth").append(result);
   });
 
 
