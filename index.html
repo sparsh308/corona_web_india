@@ -1,88 +1,78 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-   <meta name="viewport" content="width=1024">
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1024">
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
 
-  
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-
-
-  
-
-    <!-- My jQuery -->
-    <script src="main.js"></script>
+  <!-- My jQuery -->
+  <script src="main.js"></script>
 
   <style>
-      body {
-       
-       font-weight:bolder;
-        font-size: 20px;
-        text-shadow: 2px 1px 2px #aaa
-        
-        
-      }
-      </style>
+    body {
+      font-weight: bolder;
+      font-size: 20px;
+      text-shadow: 2px 1px 2px #aaa
+    }
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  </style>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-     
-      
-    </ul>
-    
-  </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
 </head>
 
 <body>
-  
-    <!-- Chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/htmlson.js@1.0.4/src/htmlson.js"></script>
-    <title>Covid-19 Tracker India</title>
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/htmlson.js@1.0.4/src/htmlson.js"></script>
+
+  <title>Covid-19 Tracker India</title>
+
   </head>
+
   <body>
+
     <div class="container-fluid bg-light p-2 text-center my-1">
       <img src="man.png" alt="logo image" style="width:100px;height:100px;">
       <h1 style="font-weight: bolder;">Covid-19 Tracker India</h1>
-    
     </div>
+
     <div class="container bg-light p-1 my-1 text-center">
-      
-      <h5 class="text-info1" style="color:limegreen",font-weight:bolder >#GoCoronaGo</h5>
+
+      <h5 class="text-info1" style="color:limegreen" ,font-weight:bolder>#GoCoronaGo</h5>
       <img src="stayhome.png" alt="logo image" style="width:80px;height:80px;">
       <p class="text-muted" style="font-weight: bolder;">Stay Home Stay Safe.</p>
     </div>
     <div class="container my-5 p-2">
       <div class="row text-center">
         <div class="col-3 "">
-          <h5 style="font-weight: bolder; color: #ff9000;">Confirmed</h5>
-          <p id="confirmed"style="color: #ff9000;"></p>
+          <h5 style=" font-weight: bolder; color: #ff9000;">Confirmed</h5>
+          <p id="confirmed" style="color: #ff9000;"></p>
         </div>
         <div class="col-3 text-info">
           <h5 style="font-weight: bolder;">Active</h5>
@@ -98,43 +88,54 @@
         </div>
       </div>
     </div>
-   
-  
 
-    
+
+
+    <div><h4 class="container bg-light p-1 my-1 text-center">Covid-19 Cases India Total </h4></div>
     <canvas id="myChart2" width="250" height="100"></canvas>
     
+    <div><h4 class="container bg-light p-1 my-1 text-center">Covid-19 Cases India-Timeline </h4></div>
+    
     <canvas id="myChart"></canvas>
-
+    <div><h4 class="container bg-light p-1 my-1 text-center">Covid-19 Cases India-State Wise </h4></div>
     <canvas id="myChart3"></canvas>
 
-
+    <div><h4 class="container bg-light p-1 my-1 text-center">Covid-19 Cases India State Wise Count </h4></div>
     <div class="container-fluid">
       <div class="table-responsive">
-          <table class="table">
-              <thead class="thead-dark">
-                  <tr>
-                      <th scope="col">States</th>
-                      <th scope="col">Confirmed</th>
-                      <th scope="col">Active</th>
-                      <th scope="col">Recovered</th>
-                      <th scope="col">Deceased</th>
-                  </tr>
-              </thead>
-            <tbody>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">States</th>
+              <th scope="col">Confirmed</th>
+              <th scope="col">Active</th>
+              <th scope="col">Recovered</th>
+              <th scope="col">Deceased</th>
+            </tr>
+          </thead>
+          <tbody>
           </tbody>
-          </table>
-       </table>
+        </table>
+        </table>
       </div>
-</div>
-    <footer class="footer mt-auto py-3 bg-Dark">
-    
+    </div>
+    <footer class="footer mt-auto py-3 bg-dark">
+
+        <div class="container text-center">
+           <span><p style="color: white;">Made with <span style="font-size:150%;color:red;">&hearts;</span>
+
+            
+          <span  style="color: white;">Developed by, <a  href="https://github.com/sparsh308" style="color: white;" target="_blank">Sparsh Kishore
+            Kumar</a></span>
+        </div>
+
+      </div>
       <div class="container text-center">
-          <span class="text-muted">Developed by, <a href="https://github.com/sparsh308" target="_blank">Sparsh Kishore Kumar</a></span>
+        <span style="color: white;"> Icons made by <a href="https://www.flaticon.com/authors/freepik"
+            title="Freepik" style="color: white;">Freepik</a> from <a style="color: white;" href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com</a></span>
       </div>
-      <div class="container text-center">
-         <span class="text-muted"> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></span>
-      </div>
-  </footer>
+    </footer>
   </body>
+
 </html>
