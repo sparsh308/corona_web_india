@@ -5,34 +5,33 @@ $(document).ready(function () {
     var confirmed = [];
     var recovered = [];
     var deaths = [];
-    var active=[];
+    var active = [];
 
     var total_active;
     var total_confirmed;
     var total_recovered;
     var total_deaths;
-    
 
-    var date=[];
-    var totalconfirmed=[];
-    var totaldeceased=[];
-    var totalrecovered=[];
-   
+    var date = [];
+    var totalconfirmed = [];
+    var totaldeceased = [];
+    var totalrecovered = [];
+
     // Take the first element in statewise array and add the objects values into the above variables
     total_active = data.statewise[0].active;
     total_confirmed = data.statewise[0].confirmed;
     total_recovered = data.statewise[0].recovered;
     total_deaths = data.statewise[0].deaths;
     var tbody = $('.table'),
-          props = ["state","confirmed", "active","recovered", "deaths"];
-      $.each(data.statewise, function(i, objk) {
-        var tr = $('<tr>');
-        $.each(props, function(i, prop) {
-          $('<td>').html(objk[prop]).appendTo(tr);  
-        });
-        tbody.append(tr);
+      props = ["state", "confirmed", "active", "recovered", "deaths"];
+    $.each(data.statewise, function (i, objk) {
+      var tr = $('<tr>');
+      $.each(props, function (i, prop) {
+        $('<td>').html(objk[prop]).appendTo(tr);
       });
-    
+      tbody.append(tr);
+    });
+
     // The each loop select a single statewise array element
     // Take the data in that array and add it to variables
     $.each(data.statewise, function (id, obj) {
@@ -42,8 +41,6 @@ $(document).ready(function () {
       deaths.push(obj.deaths);
       active.push(obj.active);
     });
-
-
     $.each(data.cases_time_series, function (id, obj) {
       date.push(obj.date);
       totalconfirmed.push(obj.totalconfirmed);
@@ -65,17 +62,15 @@ $(document).ready(function () {
     $("#deaths").append(total_deaths);
 
     // Chart initialization
-  
-
     var myChart2 = document.getElementById("myChart2").getContext("2d");
     var mypie = new Chart(myChart2, {
       type: "doughnut",
       data: {
         datasets: [
           {
-            
-            data: [total_active,total_confirmed,total_deaths,total_recovered],
-            backgroundColor:["#2A81EA", "#ff9000","#F24338","#14e81f"],
+
+            data: [total_active, total_confirmed, total_deaths, total_recovered],
+            backgroundColor: ["#2A81EA", "#ff9000", "#F24338", "#14e81f"],
           },
         ],
         labels: [
@@ -83,17 +78,11 @@ $(document).ready(function () {
           'Total Confirmed',
           'Total Deaths',
           'Total Recovered'
-      ],
-      
+        ],
+
       },
       option: {},
-      });
-     
-      
-      
-      
-      
-
+    });
 
     var myChart = document.getElementById("myChart").getContext("2d");
     var chart = new Chart(myChart, {
@@ -104,7 +93,7 @@ $(document).ready(function () {
           {
             label: "Total Confirmed Cases",
             data: totalconfirmed,
-            backgroundColor: "#ff9000",
+            borderColor: "#ff9000",
             minBarLength: 100,
           },
           {
@@ -119,7 +108,7 @@ $(document).ready(function () {
             backgroundColor: "#14e81f",
             minBarLength: 100,
           },
-         
+
         ],
       },
       option: {},
@@ -134,7 +123,7 @@ $(document).ready(function () {
           {
             label: "Total Confirmed Cases",
             data: confirmed,
-            backgroundColor: "#ff9000",
+            borderColor: "#ff9000",
             minBarLength: 100,
           },
           {
@@ -155,13 +144,13 @@ $(document).ready(function () {
             backgroundColor: "#2A81EA",
             minBarLength: 100,
           },
-         
+
         ],
       },
       option: {},
     })
-     
+
   });
-  
-  
+
+
 });
