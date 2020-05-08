@@ -47,7 +47,17 @@ $(document).ready(function () {
       totaldeceased.push(obj.totaldeceased);
       totalrecovered.push(obj.totalrecovered);
     });
-    console.log(date);
+
+    var x = 0;
+    for (i in data.cases_time_series) {
+      x++;
+    }
+    console.log(x);
+
+    var inital = data.cases_time_series[x - 6].totalconfirmed;
+    console.log(inital);
+    var end = data.cases_time_series[x - 1].totalconfirmed;
+    console.log(end);
     // Remove the first element in the states, confirmed, recovered, and deaths as that is the total value
     states.shift();
     confirmed.shift();
@@ -60,6 +70,7 @@ $(document).ready(function () {
     $("#active").append(total_active);
     $("#recovered").append(total_recovered);
     $("#deaths").append(total_deaths);
+
 
     // Chart initialization
     var myChart2 = document.getElementById("myChart2").getContext("2d");
@@ -95,6 +106,7 @@ $(document).ready(function () {
             data: totalconfirmed,
             borderColor: "#ff9000",
             minBarLength: 100,
+
           },
           {
             label: "Total Deceased Cases",
@@ -125,6 +137,7 @@ $(document).ready(function () {
             data: confirmed,
             borderColor: "#ff9000",
             minBarLength: 100,
+            fill: false,
           },
           {
             label: "Total Deceased Cases",
@@ -150,6 +163,19 @@ $(document).ready(function () {
       option: {},
     })
 
+
+    function calcPc(n1, n2) {
+      return (((n2 - n1) / n1 * 100).toLocaleString('fullwide', { maximumFractionDigits: 3 }) + "%");
+    }
+
+    var result = calcPc(inital, total_confirmed);
+    console.log(
+
+      " Growth Rate: in last 7 days", result ,
+
+
+    )
+    $("#Growth").append(result)
   });
 
 
