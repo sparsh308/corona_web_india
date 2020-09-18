@@ -16,3 +16,12 @@
 ![e006d0bcf1a34ff3b686a44ce4925fca_29_1920](https://user-images.githubusercontent.com/47140660/81826865-d5cd9400-9555-11ea-9acb-23fa77475090.jpg)
 ![e006d0bcf1a34ff3b686a44ce4925fca_23_1920](https://user-images.githubusercontent.com/47140660/81826932-e8e06400-9555-11ea-8fad-8bd94623ea46.jpg)
 
+
+
+### Found a Bug ?
+### If you find any bug or have any feature request, feel free to raise an issue or contact me on : Sparsh308@gmail.com
+
+### If you want to contribute to this project please create a pull request.
+
+### If you liked ♥ this project, please hit that STAR button.
+
