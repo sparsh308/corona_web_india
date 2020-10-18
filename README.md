@@ -4,6 +4,7 @@
 
 ### Features.
 #### >Total Confirmed Cases, Active Cases, Recovered Cases , Deceased cases.(pie chart)
+
 #### >It Shows Percentage growth of COVID-19 patients in last 7 days in India.
 #### >It Shows Predicted Number of confirmed cases india after 7 days based on past 7 days data analysis.
 #### >India COVID19 patients Timeline(Represented using line  Graph)
