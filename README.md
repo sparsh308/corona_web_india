@@ -20,7 +20,7 @@
 
 
 ### Found a Bug ?
-### If you find any bug or have any feature request, feel free to raise an issue or contact me on : Sparsh308@gmail.com
+### If you find any bug or have any feature request, feel free to raise an issue or contact me on :Sparsh308@gmail.com
 
 ### If you want to contribute to this project please create a pull request.
 
