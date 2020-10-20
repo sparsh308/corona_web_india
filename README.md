@@ -7,7 +7,7 @@
 
 #### >It Shows Percentage growth of COVID-19 patients in last 7 days in India.
 #### >It Shows Predicted Number of confirmed cases india after 7 days based on past 7 days data analysis.
-#### >India COVID19 patients Timeline(Represented using line  Graph)
+#### >India COVID19 patients Timeline(Represented using line  Graph).
 #### >State-wise Patients  data in India(Represented using line  Graph).
 ### Web App Link :- https://sparsh308.github.io/corona_web_india/
 ## Screenshots
